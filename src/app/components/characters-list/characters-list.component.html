@@ -1,0 +1,23 @@
+<table class="w-1/2 border border-black m-1 border-collapse">
+    <thead>
+        <tr class="border border-black">
+            <th>
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Gender
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @for(character of characters(); track character.id){
+            <tr class="hover:bg-slate-100 transition-all cursor-pointer border-b border-b-slate-200 last:border-b-black">
+                <td class="w-[60px]"><img src={{character.image}} width="50" height="50" class="rounded-full mx-auto my-[5px]" /></td>
+                <td class="text-center border-x border-x-slate-200">{{character.name}}</td>
+                <td class="text-center border-r border-r-black">{{character.gender}}</td>
+            </tr>
+        }
+    </tbody>
+</table>
