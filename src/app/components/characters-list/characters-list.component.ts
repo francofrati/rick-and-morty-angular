@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, signal } from '@angular/core';
-import { CharacterCardComponent } from '../character-card/character-card.component';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-characters-list',
   standalone: true,
-  imports: [CharacterCardComponent],
+  imports: [RouterLink],
   templateUrl: './characters-list.component.html',
   styleUrl: './characters-list.component.css'
 })
-export class CharactersListComponent {
+export class CharactersListComponent implements OnInit {
   http = inject(HttpClient)
 
   characters = signal<any[]>([])
@@ -20,11 +20,9 @@ export class CharactersListComponent {
   getCharacters() {
     return this.http.get<{ info: any, results: any[] }>(this.allCharactersUrl)
   }
-
-  constructor() {
+  ngOnInit(): void {
     this.getCharacters().subscribe((res) => {
       this.characters.set(res.results)
     })
   }
-
 }
