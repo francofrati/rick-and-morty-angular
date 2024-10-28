@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap, RouterLink } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-character-detail',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './character-detail.component.html',
   styleUrl: './character-detail.component.css'
 })

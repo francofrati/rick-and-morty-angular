@@ -1,1 +1,12 @@
-<p>character-detail works!</p>
+<button class="border-2 border-slate-200 rounded-full px-3 py-1 hover:bg-slate-200 mt-4 ml-4 mb-4 font-semibold text-slate-500">
+
+<a routerLink="/characters" >Characters List</a></button>
+<section class="flex flex-col gap-4 pl-4">
+    <img src={{character().image}} class="" height="200" width="200">
+    <p>{{character().name}}</p>
+    <p>{{character().gender}}</p>
+    <p>Episodes: {{character().episode?.length}}</p>
+    <p>{{character().status}}</p>
+
+
+</section>

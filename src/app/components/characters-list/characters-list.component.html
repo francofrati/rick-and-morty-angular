@@ -14,10 +14,10 @@
     </thead>
     <tbody>
         @for(character of characters(); track character.id){
-            <tr class="hover:bg-slate-100 transition-all cursor-pointer border-b border-b-slate-200 last:border-b-black">                
-                    <td class="w-[60px]"><a routerLink={{character.id}}><img src={{character.image}} width="50" height="50" class="rounded-full mx-auto my-[5px]" /></a></td>
-                    <td class="text-center border-x border-x-slate-200">{{character.name}}</td>
-                    <td class="text-center border-r border-r-black">{{character.gender}}</td>
+            <tr class="hover:bg-slate-100 transition-all cursor-pointer border-b border-b-slate-200 last:border-b-black">                 
+                    <td class="w-[60px] relative"><a routerLink={{character.id}} class="absolute w-full h-full top-0 left-0"></a><img src={{character.image}} width="50" height="50" class="rounded-full mx-auto my-[5px]" /></td>
+                    <td class="text-center border-x border-x-slate-200 relative"><a routerLink={{character.id}} class="absolute w-full h-full top-0 left-0"></a>{{character.name}}</td>
+                    <td class="text-center border-r border-r-black relative"><a routerLink={{character.id}} class="absolute w-full h-full top-0 left-0"></a>{{character.gender}}</td>
                 </tr>
         }
     </tbody>

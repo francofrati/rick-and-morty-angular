@@ -21,6 +21,7 @@ export class CharactersListComponent implements OnInit {
     return this.http.get<{ info: any, results: any[] }>(this.allCharactersUrl)
   }
   ngOnInit(): void {
+    console.log(this.characters())
     this.getCharacters().subscribe((res) => {
       this.characters.set(res.results)
     })
